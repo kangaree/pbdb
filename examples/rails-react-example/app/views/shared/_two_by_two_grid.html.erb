@@ -1,0 +1,22 @@
+<%
+  ticket_data = [
+    { icon:  "file-lines", variant: "green", size: "md", text: "Tickets (YTD)", value: 1426 },
+    { icon:  "calendar-xmark", variant: "red", size: "md", text: "Overdue (YTD)", value: 25 },
+    { icon:  "rectangle-list", variant: "teal", size: "md", text: "Closed Without Action (YTD)", value: 97 },
+    { icon:  "flag", variant: "yellow", size: "md", text: "Escalated (YTD)", value: 896 },
+  ]
+%>
+
+<%= pb_rails("card", props: { border_none: true, padding:"none"}) do %>
+  <div class="two-by-two-grid">
+    <% ticket_data.each do |ticket|%>
+      <%= pb_rails("background", props: {background_color: "white", padding: "md"}) do %>
+        <%= pb_rails("flex", props: {horizontal: "left", vertical: "center"}) do %>
+          <%= pb_rails("flex/flex_item") do %>
+            <%= pb_rails("icon_stat_value", props: ticket ) %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

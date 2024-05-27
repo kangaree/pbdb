@@ -1,0 +1,14 @@
+@import '../mixins/media';
+@import "../config/variables";
+
+.two-column-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space_lg;
+}
+
+@include media(tabletAndUp) {
+  .two-column-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,31 @@
+@import '../mixins/media';
+@import "../config/variables";
+
+.two-by-two-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.two-by-two-grid .pb_background_kit {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e4e8f0;
+
+  padding: $space_xs !important;
+
+  @include media(tabletAndUp) {
+    padding: $space_md !important;
+  }
+}
+
+// Fix Centering of Icons
+// TODO: investigate why these are off center vertically?
+[class^=pb_icon_circle_kit] i[class^=pb_icon_kit] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
