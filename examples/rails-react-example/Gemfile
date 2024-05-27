@@ -81,3 +81,6 @@ end
 
 # Connect to external API
 gem "httparty"
+
+# Font Awesome Free
+gem "font-awesome-sass"

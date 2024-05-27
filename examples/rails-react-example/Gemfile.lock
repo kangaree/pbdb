@@ -98,6 +98,8 @@ GEM
     erubi (1.12.0)
     execjs (2.9.1)
     ffi (1.16.3)
+    font-awesome-sass (6.5.2)
+      sassc (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     httparty (0.22.0)
@@ -284,6 +286,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  font-awesome-sass
   httparty
   importmap-rails
   jbuilder
