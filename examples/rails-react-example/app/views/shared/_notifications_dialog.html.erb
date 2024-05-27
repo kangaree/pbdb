@@ -1,0 +1,16 @@
+<%= pb_rails("dialog", props: { id:"dialog-1" }) do %>
+    <% if @quotes.any? %>
+        <%= pb_rails("card", props: { padding: "sm" })  do %>
+            <%= pb_rails("title", props: { text: "Zen Quotes", size: 3, margin: "auto" }) %>
+        <% end %>
+        <ul>
+            <% @quotes.each do |quote| %>
+                <%= pb_rails("card", props: { padding: "xl" })  do %>
+                    <li><%= quote['q'] %> - <%= quote['a'] %></li>
+                <% end %>
+            <% end %>
+        </ul>
+    <% else %>
+        <p>No quotes found.</p>
+    <% end %>
+<% end %>
