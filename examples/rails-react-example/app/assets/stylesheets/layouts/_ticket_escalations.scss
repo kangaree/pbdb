@@ -1,0 +1,33 @@
+@import '../mixins/media';
+@import "../config/variables";
+
+.ticket-escalations {
+  display: grid;
+  grid-gap: $space_sm;
+  grid-template-columns: 1fr;
+  margin-bottom: $space_md;
+
+  // Remove rounded corners for header
+  .border_radius_md {
+    border-radius: 0;
+  }
+
+  // Right Arrow Caret colors
+  a {
+    color: $text_lt_light;
+  }
+
+  // Grow columns- 5
+  @include media(tabletAndUp) {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+  }
+}
+
+// Show More Collapsible
+[class^=pb_collapsible_kit] {
+  padding: 0;
+}
+[class^=pb_collapsible_main_kit] {
+  background-color: $white;
+}

@@ -1,0 +1,16 @@
+<%= link_to '', onclick: 'event.preventDefault();' do %>
+  <%= pb_rails("card", props: { padding: "sm" }) do %>
+      <%= pb_rails("flex", props: { align_items: "center", justify: "between" }) do %> 
+        <%= pb_rails("flex", props: { align_items: "center"} ) do %>
+              <%= pb_rails("avatar", props: {
+                  name: ticket[:user][:name],
+                  size: "xs",
+                  image_url: ticket[:user][:image],
+                  margin_right: "xs",
+              }) %>
+          <%= pb_rails("body", props: { text: ticket[:title], truncate: "1", margin_right: "xs" }) %>
+        <% end %> 
+        <%= pb_rails("icon", props: { icon: "square-caret-right", fixed_width: true }) %>
+      <% end %>
+  <% end %>
+<% end %>
