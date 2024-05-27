@@ -11,11 +11,11 @@
     <%= pb_rails("layout", props: {position: "left", size: "md", collapse: "md"}) do %>
     <%= pb_rails("layout/sidebar", props: { size: "sm" }) do %>
         <%= pb_rails("nav", props: { highlight: false }) do %>
-            <%= pb_rails("nav/item", props: { text: "Revenue", link: "#", active: true, icon_right: "circle-up" }) %>
-            <%= pb_rails("nav/item", props: { text: "Orders", link: "#", icon_right: "circle-down" }) %>
+            <%= render partial: "shared/kpis_nav_item_dashboard_value", locals: { label: 'Revenue', type: "increase", value: 26, active: true }  %>
+            <%= render partial: "shared/kpis_nav_item_dashboard_value", locals: { label: 'Orders', type: "decrease", value: 2 }  %>
             <%= pb_rails("nav/item", props: { text: "Profit", link: "#" }) %>
-            <%= pb_rails("nav/item", props: { text: "Average Check", link: "#", icon_right: "circle-up" }) %>
-            <%= pb_rails("nav/item", props: { text: "Canceled", link: "#", icon_right: "circle-down" }) %>
+            <%= render partial: "shared/kpis_nav_item_dashboard_value", locals: { label: 'Average Check', type: "increase", value: 5 }  %>
+            <%= render partial: "shared/kpis_nav_item_dashboard_value", locals: { label: 'Canceled', type: "decrease", value: 18 }  %>
             <%= pb_rails("nav/item", props: { text: "Repeat Sales", link: "#" }) %>
         <% end %>
     <% end %>

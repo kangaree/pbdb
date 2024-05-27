@@ -1,0 +1,22 @@
+
+<% is_active = defined?(active) && active %>
+<% card_props = { margin_bottom: "none", padding: "sm", border_radius: "none" } %>
+<% if is_active %>
+  <% card_props[:highlight] = { position: "side", color: "primary_action" } %>
+<% end %>
+
+<%= link_to '', onclick: 'event.preventDefault();', class: 'kpis_nav_list_item' do %>
+  <%= pb_rails("card", props: card_props) do %>
+    <%= pb_rails("flex", props: {justify: "between"}) do %>
+      <span class="pb_nav_list_item_text">
+        <%= pb_rails("title", props: { text: label, tag: "h4", size: 4, color: is_active ? "link" : nil }) %>
+      </span>
+      <% if defined?(value) && value != 0 %>
+        <%= pb_rails("dashboard_value", props: {
+          stat_change: { change: type, value: value },
+          classname: "pb_nav_list_item_icon_right",
+      }) %>
+      <% end %>
+    <% end %>    
+  <% end %>
+<% end %>
