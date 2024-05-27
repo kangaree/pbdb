@@ -1,0 +1,55 @@
+@import '../mixins/media';
+@import '../config/variables';
+
+.navbar-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $white;
+
+  // Header links color
+  a {
+    color: $text_lt_light;
+  }
+
+  // Layout should be responsive, but have overflow scroll just in case
+  overflow-x: scroll;
+}
+
+.navbar {
+  padding-right: $space_xs;
+  padding-left: $space_xs;
+
+  @include media(tabletAndUp) {
+    padding-left: calc((100% - var(--container-size)) / 2);
+    padding-right: calc((100% - var(--container-size)) / 2);
+  }
+
+  // Remove User title on mobile
+  // TODO: use a selector that's not [class*=_4]
+  [class^=pb_title_kit][class*=_4] {
+    display: none;
+
+    @include media(tabletAndUp) {
+      display: block;
+    }
+  }
+}
+
+// Horizontal Nav
+[class^="pb_nav_list"][class*="_horizontal"] [class*="pb_nav_list_kit_item"][class*="pb_nav_list_item"][class*="_link"] {
+  padding: $space_xxs $space_xs;
+  @include media(tabletAndUp) {
+    padding: $space_sm $space_md;
+  }
+
+  [class*="_text"] {
+    // Seems to be 500. Switch to 400?
+    font-weight: 500;
+    font-size: $font_small;
+      
+    @include media(tabletAndUp) {
+      font-size: $font_medium;
+    }
+  }
+}

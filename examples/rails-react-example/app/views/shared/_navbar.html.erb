@@ -1,0 +1,61 @@
+<header class="navbar-container">
+  <%= pb_rails("flex", props: { classname: "navbar", align_items: "center", padding_y: "xs", } ) do %>
+    <%= pb_rails("flex", props: { align_items: "center" } ) do %>
+      <%= pb_rails("flex/flex_item") do %>
+        <%= pb_rails("icon", props: { icon: "gem", fixed_width: true, size: "2x", margin_right: "xs" }) %>
+      <% end %>
+      <%= pb_rails("flex/flex_item") do %>
+        <%= pb_rails("title", props: { size: 3, bold: false }) do %>
+          RB&G
+        <% end %>
+        <%= pb_rails("caption", props: { size: 'xs', color: 'light' }) do %>
+          INTERNATIONAL
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= pb_rails("flex", props: { align: "center", margin_left: "auto" }) do %>
+      <%= link_to '', onclick: 'event.preventDefault();' do %>
+        <%= pb_rails("flex") do %>
+          <%= pb_rails("icon", props: { icon: "bell", fixed_width: true }) %>
+          <%= pb_rails("badge", props: {
+            text: "4",
+            variant: "primary",
+            margin_right: "md"
+          }) %>
+        <% end %>
+      <% end %>
+
+      <%= link_to '', onclick: 'event.preventDefault();' do %>
+        <%= pb_rails("flex") do %>
+          <%= pb_rails("icon", props: { icon: "envelope", fixed_width: true }) %>
+          <%= pb_rails("badge", props: {
+            text: "2",
+            variant: "primary",
+            margin_right: "md"
+          }) %>
+        <% end %>
+      <% end %>
+      
+      <%= pb_rails("flex", props: { align_items: "center" }) do %>
+        <%= pb_rails("title", props: { text: "Indira Shree", size: 4, margin_right: "xs" }) %>
+        <%= pb_rails("avatar", props: {
+          name: "Indira Shree",
+          size: "sm",
+          image_url: "https://randomuser.me/api/portraits/women/99.jpg"
+        }) %>
+        <%= link_to '', onclick: 'event.preventDefault();' do %>
+          <%= pb_rails("icon", props: { icon: "square-caret-down", fixed_width: true }) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= pb_rails("section_separator") %>
+  <%= pb_rails("flex", props: { classname: "navbar", align_items: "center" } ) do %>
+    <%= pb_rails("nav", props: { orientation: "horizontal" }) do %>
+      <%= pb_rails("nav/item", props: { text: "Dashboard", link: "#", active: true }) %>
+      <%= pb_rails("nav/item", props: { text: "Products", link: "#" }) %>
+      <%= pb_rails("nav/item", props: { text: "In Progress ", link: "#" }) %>
+      <%= pb_rails("nav/item", props: { text: "Settings", link: "#" }) %>
+    <% end %>
+  <% end %>
+</header>

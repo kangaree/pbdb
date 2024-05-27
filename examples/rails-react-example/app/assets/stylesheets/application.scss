@@ -30,3 +30,12 @@ $extrabold:     700;
 
 @import "reset";
 @import "playbook";
+
+// Configuration
+@import "config/variables";
+
+// Layouts
+@import "layouts/container";
+
+// Components
+@import "components/navbar";

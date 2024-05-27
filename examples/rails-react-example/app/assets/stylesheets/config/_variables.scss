@@ -1,0 +1,30 @@
+:root {
+  // Desktop Container Max Width
+  // var(--container-size)
+  --container-size: 75rem;
+}
+
+// playbook/app/pb_kits/playbook/tokens/_spacing.scss
+$space_xxs:   4px !default;
+$space_xs:    8px !default;
+$space_sm:    16px !default;
+$space_md:    24px !default;
+$space_lg:    32px !default;
+$space_xl:    40px !default;
+
+// playbook/app/pb_kits/playbook/tokens/_colors.scss
+$white:               #FFFFFF !default;
+$text_lt_light:       #687887 !default;
+
+// playbook/app/pb_kits/playbook/tokens/_typography.scss
+$font_jumbo:        36px !default;
+$font_largest:      32px !default;
+$font_larger:       28px !default;
+$font_large:        20px !default;
+$font_base:         16px !default;
+$font_default:      $font_base !default;
+$font_normal:       $font_base !default;
+$font_medium:       $font_base !default;
+$font_small:        14px !default;
+$font_smaller:      12px !default;
+$font_smallest:     11px !default;
