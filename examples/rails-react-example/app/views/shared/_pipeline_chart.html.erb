@@ -9,7 +9,7 @@
   ]
 %>
 
-<%= pb_rails("card", props: { padding: "none", border_none: true }) do %>
+<%= pb_rails("card", props: { padding: "none", border_none: true, classname: "overflow-y-scroll" }) do %>
     <%= pb_rails("flex", props: {vertical: "center",spacing: "between"}) do %>
     <%= pb_rails("title", props: { text: "Pipeline Chart", tag: "h4", size: 4, padding: "sm" }) %> 
     <% end %>
@@ -19,10 +19,10 @@
         <%= pb_rails("flex/flex_item", props: {fixed_size: "100px", margin_right: "sm"}) do %>
             <%= pb_rails("caption", props: { text: info[:label], size: 'xs' }) %>
         <% end %>
-        <%= pb_rails("flex/flex_item", props: {grow:true}) do %>
+        <%= pb_rails("flex/flex_item", props: { grow:true }) do %>
             <%= pb_rails("flex", props: {vertical: "center"}) do %>
-                <%#= 100% = 120px wide bar + label %>
-                <%= pb_rails("progress_simple", props: { width: "#{1.2 * info[:percent]}px", percent: 100.0 }) %>
+                <%# TODO: make this better on mobile. For now the width is 200px + label. %>
+                <%= pb_rails("progress_simple", props: { width: "#{2 * info[:percent]}px", percent: 100.0 }) %>
                 <%= pb_rails("flex/flex_item") do %>
                     <%= pb_rails("caption", props: { margin_left: "xs", text: "#{info[:percent]}%", size: 'xs' }) %>
                 <% end %>

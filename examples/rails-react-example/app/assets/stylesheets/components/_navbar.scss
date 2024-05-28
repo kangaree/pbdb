@@ -25,9 +25,11 @@
     padding-right: calc((100% - var(--container-size)) / 2);
   }
 
-  // Remove User title on mobile
+  // Set user title to small font size
+  // Remove user title on mobile
   // TODO: use a selector that's not [class*=_4]
   [class^=pb_title_kit][class*=_4] {
+    font-size: $font_small;
     display: none;
 
     @include media(tabletAndUp) {
@@ -40,7 +42,7 @@
 [class^="pb_nav_list"][class*="_horizontal"] [class*="pb_nav_list_kit_item"][class*="pb_nav_list_item"][class*="_link"] {
   padding: $space_xxs $space_xs;
   @include media(tabletAndUp) {
-    padding: $space_sm $space_md;
+    padding: $space_xs $space_md;
   }
 
   [class*="_text"] {

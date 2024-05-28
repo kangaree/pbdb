@@ -7,6 +7,10 @@
   grid-template-rows: 1fr 1fr;
   height: 100%;
   overflow-y: auto;
+  
+  [class^=pb_title_kit][class*=_2], [class^="pb_caption_kit"]  {
+    font-weight: 400;
+  }
 }
 
 .two-by-two-grid .pb_background_kit {

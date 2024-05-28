@@ -31,3 +31,18 @@
 [class^=pb_collapsible_main_kit] {
   background-color: $white;
 }
+
+// Set to two lines, even if you only have one line of text
+.ticket-escalations-header-text {
+  display: flex;
+  align-items: center;
+  text-align: start;
+  line-height: 1.5;
+  height: 3em;
+  overflow: hidden;
+}
+
+// Remove main and use custom toggle
+.pb_collapsible_main_kit {
+  display: none;
+}

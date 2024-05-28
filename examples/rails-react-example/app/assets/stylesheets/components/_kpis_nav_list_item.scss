@@ -1,12 +1,7 @@
 @import '../mixins/media';
 @import '../config/variables';
 
-// TODO: figure out how to make the bg change on hover
 .kpis_nav_list_item {
-  padding: 0;
-  border: 0;
-  border-bottom: 1px solid #E4E8F0;
-
   // Key Performance Indicators
   [class^=pb_title_kit][class*=_4] { 
     font-weight: 500
@@ -17,4 +12,16 @@
     // There aren't any fa regular free arrow icons. Use the strong free icons.
     font-weight: 700;
   }
+}
+
+// Keep dashboard value arrow colors
+[class^="pb_nav_list"][class*="_vertical"][class*="_normal"] [class*="pb_nav_list_kit_item"][class*="pb_nav_list_item"][class*="_link"]:hover [class*="_icon"] {
+  color: inherit;
+}
+
+// Active
+[class*="pb_nav_list_kit_item"][class*="pb_nav_list_item_active"][class*="_link"] [class*="_text"] {
+  font-weight: 700;
+  color: #0056CF !important;
+  border-left: 100
 }

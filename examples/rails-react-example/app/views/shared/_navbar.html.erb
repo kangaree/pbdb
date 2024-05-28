@@ -20,7 +20,7 @@
           <%= pb_rails("badge", props: {
             text: "4",
             variant: "primary",
-            margin_right: "md"
+            margin_right: "lg"
           }) %>
         <% end %>
       <% end %>
@@ -31,7 +31,7 @@
           <%= pb_rails("badge", props: {
             text: "2",
             variant: "primary",
-            margin_right: "md"
+            margin_right: "lg"
           }) %>
         <% end %>
       <% end %>
@@ -44,13 +44,13 @@
           image_url: "https://randomuser.me/api/portraits/women/99.jpg"
         }) %>
         <%= link_to '', onclick: 'event.preventDefault();' do %>
-          <%= pb_rails("icon", props: { icon: "square-caret-down", fixed_width: true }) %>
+          <%= pb_rails("icon", props: { icon: "hand-point-down", fixed_width: true }) %>
         <% end %>
       <% end %>
     <% end %>
   <% end %>
   <%= pb_rails("section_separator") %>
-  <%= pb_rails("flex", props: { classname: "navbar", align_items: "center" } ) do %>
+  <%= pb_rails("flex", props: { classname: "navbar", align_items: "center", padding_top: "xs" } ) do %>
     <%= pb_rails("nav", props: { orientation: "horizontal" }) do %>
       <%= pb_rails("nav/item", props: { text: "Dashboard", link: "/", active: current_page?(root_path) }) %>
       <%= pb_rails("nav/item", props: { text: "Products", link: "/tickets", active: params[:controller] == "tickets" }) %>
