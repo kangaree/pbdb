@@ -5,29 +5,31 @@
         <%= header %>
       <% end %>
       <%= pb_rails("badge", props: {
-        text: tickets.length,
+        text: tickets&.length || 0,
         variant: variant,
         rounded: true
       }) %>
     <% end %>
   <% end %>
   <%= pb_rails("section_separator") %>
-  <% tickets.take(6).each do |ticket| %>
-    <%= render partial: "shared/ticket_escalations_line_item", locals: { ticket: ticket } %>
-  <% end %>
-  <% if tickets.count > 6 %>
+  <% if tickets&.any? %>
+    <% tickets.take(6).each do |ticket| %>
+      <%= render partial: "shared/ticket_escalations_line_item", locals: { ticket: ticket } %>
+    <% end %>
+    <% if tickets.count > 6 %>
 
-    <%= pb_rails("collapsible") do %>
-      <%= pb_rails("collapsible/collapsible_content", props: { padding: "none", id:"collapsed-toggle" }) do %>
-        <% tickets.drop(6).each do |ticket| %>
-          <%= render partial: "shared/ticket_escalations_line_item", locals: { ticket: ticket } %>
+      <%= pb_rails("collapsible") do %>
+        <%= pb_rails("collapsible/collapsible_content", props: { padding: "none", id:"collapsed-toggle" }) do %>
+          <% tickets.drop(6).each do |ticket| %>
+            <%= render partial: "shared/ticket_escalations_line_item", locals: { ticket: ticket } %>
+          <% end %>
         <% end %>
-      <% end %>
 
-      <%= pb_rails("collapsible/collapsible_main", props: { padding: "sm", name: "default-main", icon: ["square-caret-down", "square-caret-up"] }) do %>
-        <%= pb_rails("button", props: { text: "Show More", variant:"link", padding: "none"}) %>
+        <%= pb_rails("collapsible/collapsible_main", props: { padding: "sm", name: "default-main", icon: ["square-caret-down", "square-caret-up"] }) do %>
+          <%= pb_rails("button", props: { text: "Show More", variant:"link", padding: "none"}) %>
+        <% end %>
+        
       <% end %>
-      
     <% end %>
   <% end %>
 </div>

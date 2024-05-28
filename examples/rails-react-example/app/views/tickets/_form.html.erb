@@ -21,10 +21,7 @@
     <%= form.text_area :content %>
   </div>
 
-  <div>
-    <%= form.label :ticket_type, style: "display: block" %>
-    <%= form.text_field :ticket_type %>
-  </div>
+  <%= form.select :ticket_type, ['new', 'manager_feedback', 'processing', 'awaiting_feedback', 'approved'] %>
 
   <div>
     <%= form.label :user_name, style: "display: block" %>

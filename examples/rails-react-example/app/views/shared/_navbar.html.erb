@@ -52,8 +52,8 @@
   <%= pb_rails("section_separator") %>
   <%= pb_rails("flex", props: { classname: "navbar", align_items: "center" } ) do %>
     <%= pb_rails("nav", props: { orientation: "horizontal" }) do %>
-      <%= pb_rails("nav/item", props: { text: "Dashboard", link: "/", active: true }) %>
-      <%= pb_rails("nav/item", props: { text: "Products", link: "/tickets" }) %>
+      <%= pb_rails("nav/item", props: { text: "Dashboard", link: "/", active: current_page?(root_path) }) %>
+      <%= pb_rails("nav/item", props: { text: "Products", link: "/tickets", active: params[:controller] == "tickets" }) %>
       <%= pb_rails("nav/item", props: { text: "In Progress ", link: "#" }) %>
       <%= pb_rails("nav/item", props: { text: "Settings", link: "#" }) %>
     <% end %>

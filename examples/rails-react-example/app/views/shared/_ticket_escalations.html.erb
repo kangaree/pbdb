@@ -1,31 +1,15 @@
 <%
-  escalation_data = [
-    { type: "new", title: "Missing part", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "new", title: "Not performing", user: { name: "Mr K", image: "https://randomuser.me/api/portraits/men/44.jpg" } },
-    { type: "new", title: "Missing part", user: { name: "Gary K", image: "" } },
-    { type: "new", title: "Missing part", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "new", title: "Not performing", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "new", title: "Missing part", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "new", title: "John Cena", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/men/44.jpg" } },
-    { type: "manager_feedback", title: "Add to Cart", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "manager_feedback", title: "2", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "manager_feedback", title: "2", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "manager_feedback", title: "more 2's", user: { name: "Zorro Z", image: "" } },
-    { type: "manager_feedback", title: "2", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "processing", title: "Add to Cart", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "processing", title: "Not performing", user: { name: "Mr K", image: "https://randomuser.me/api/portraits/men/44.jpg" } },
-    { type: "awaiting_feedback", title: "Add to Cart", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "approved", title: "Add to Cart", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "approved", title: "Missing part", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "approved", title: "Not performing", user: { name: "Mr K", image: "https://randomuser.me/api/portraits/men/44.jpg" } },
-    { type: "approved", title: "Missing part", user: { name: "Gary K", image: "" } },
-    { type: "approved", title: "Missing part", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "approved", title: "Not performing", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/women/44.jpg" } },
-    { type: "approved", title: "John Cena Jr", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/men/1.jpg" } },
-    { type: "approved", title: "John Cena", user: { name: "Anna K", image: "https://randomuser.me/api/portraits/men/44.jpg" } },
-  ]
-
-  tickets_by_type = escalation_data.group_by { |ticket| ticket[:type] }
+  tickets_by_type = @tickets.map do |obj|
+    {
+      id: obj[:id],
+      type: obj[:ticket_type],
+      title: obj[:title],
+      user: {
+        name: obj[:user_name],
+        image: obj[:user_image]
+      }
+    }
+  end.group_by { |ticket| ticket[:type] }
 
   new_tickets = tickets_by_type["new"]
   manager_feedback_tickets = tickets_by_type["manager_feedback"]

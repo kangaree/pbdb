@@ -1,4 +1,4 @@
-<%= link_to '', onclick: 'event.preventDefault();' do %>
+<%= link_to "/tickets/#{ticket[:id]}" do %>
   <%= pb_rails("card", props: { padding: "sm" }) do %>
       <%= pb_rails("flex", props: { align_items: "center", justify: "between" }) do %> 
         <%= pb_rails("flex", props: { align_items: "center"} ) do %>

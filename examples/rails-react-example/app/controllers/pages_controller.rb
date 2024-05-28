@@ -11,5 +11,7 @@ class PagesController < ApplicationController
       @quotes = []
       flash[:alert] = "Failed to retrieve quotes"
     end
+
+    @tickets = Ticket.all
   end
 end
