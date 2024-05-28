@@ -1,11 +1,11 @@
-<%= link_to "/tickets/#{ticket[:id]}" do %>
+<%= link_to "/tickets/#{ticket[:id]}", id: "ticket_#{ticket[:id]}" do %>
   <%= pb_rails("card", props: { padding: "sm" }) do %>
       <%= pb_rails("flex", props: { align_items: "center", justify: "between" }) do %> 
         <%= pb_rails("flex", props: { align_items: "center"} ) do %>
               <%= pb_rails("avatar", props: {
-                  name: ticket[:user][:name],
+                  name: ticket[:user_name],
                   size: "xs",
-                  image_url: ticket[:user][:image],
+                  image_url: ticket[:user_image],
                   margin_right: "xs",
               }) %>
           <%= pb_rails("body", props: { text: ticket[:title], truncate: "1", margin_right: "xs" }) %>

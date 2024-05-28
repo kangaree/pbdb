@@ -1,15 +1,7 @@
+<%= turbo_stream_from "tickets" %>
+
 <%
-  tickets_by_type = @tickets.map do |obj|
-    {
-      id: obj[:id],
-      type: obj[:ticket_type],
-      title: obj[:title],
-      user: {
-        name: obj[:user_name],
-        image: obj[:user_image]
-      }
-    }
-  end.group_by { |ticket| ticket[:type] }
+  tickets_by_type = @tickets.group_by { |ticket| ticket[:ticket_type] }
 
   new_tickets = tickets_by_type["new"]
   manager_feedback_tickets = tickets_by_type["manager_feedback"]
