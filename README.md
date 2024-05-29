@@ -101,14 +101,3 @@ I didn't get to properly test out tablets.
 
 If I could redo this challenge, I would've started by working on testing before
 building. 
-
-### Turbo Stream
-
-I made a very quick example of Turbo Stream with tickets.
-
-It works _only_ if you're making a CUD action in the "New" category. 
-Long story short, there's one stream for "tickets", but I need to split this
-out into five streams for each category. 
-
-And if you make a new ticket and there's already 7 tickets, the new ticket
-will show after the "Show More" button!
