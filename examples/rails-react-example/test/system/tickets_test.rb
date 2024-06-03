@@ -15,7 +15,7 @@ class TicketsTest < ApplicationSystemTestCase
     click_on "New ticket"
 
     fill_in "Content", with: @ticket.content
-    fill_in "Ticket type", with: @ticket.ticket_type
+    select @ticket.ticket_type, from: 'Ticket type'
     fill_in "Title", with: @ticket.title
     fill_in "User image", with: @ticket.user_image
     fill_in "User name", with: @ticket.user_name
@@ -30,7 +30,7 @@ class TicketsTest < ApplicationSystemTestCase
     click_on "Edit this ticket", match: :first
 
     fill_in "Content", with: @ticket.content
-    fill_in "Ticket type", with: @ticket.ticket_type
+    select @ticket.ticket_type, from: 'Ticket type'
     fill_in "Title", with: @ticket.title
     fill_in "User image", with: @ticket.user_image
     fill_in "User name", with: @ticket.user_name

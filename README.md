@@ -8,7 +8,6 @@
 - [Usage](#usage)
 - [APIs](#apis)
 - [Technologies Used](#technologies-used)
-- [Stray Thoughts](#stray-thoughts)
 
 ## Overview
 
@@ -89,15 +88,8 @@ In the app, you can access the Zen Quotes dialog by clicking the "bell" icon in 
 - **Turbo Stream**: Redis, for live updates through websockets
 - **HTTParty**: HTTP requests, for Zen Quotes API.
 
-## Stray Thoughts
+## Testing
 
-### Responsiveness
+To test, run `rails test:system`.
 
-I factored for mobile and desktop in mind. 
-
-I didn't get to properly test out tablets.
-
-### Testing
-
-If I could redo this challenge, I would've started by working on testing before
-building. 
+To test the index page only, run `rails test test/system/pages_test.rb`.
