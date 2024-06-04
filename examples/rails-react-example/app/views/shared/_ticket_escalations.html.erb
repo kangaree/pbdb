@@ -20,3 +20,9 @@
   <%= render partial: "shared/ticket_escalations_type", locals: { header: 'Awaiting Feedback', type: 'awaiting_feedback', variant: "error", tickets: awaiting_feedback_tickets }  %>
   <%= render partial: "shared/ticket_escalations_type", locals: { header: 'Approved', type: 'approved', variant: "success", tickets: approved_tickets }  %>
 </div>
+
+<script>
+const toggleCollapsibleById = (id) => {
+  document.dispatchEvent(new CustomEvent(id));
+};
+</script>

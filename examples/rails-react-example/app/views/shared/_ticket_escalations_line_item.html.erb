@@ -1,3 +1,9 @@
+<% 
+  def is_valid_url?(url)
+    return url =~ URI::regexp
+  end
+%>
+
 <%= link_to "/tickets/#{ticket[:id]}", id: "ticket_#{ticket[:id]}" do %>
   <%= pb_rails("card", props: { padding: "sm" }) do %>
       <%= pb_rails("flex", props: { align_items: "center", justify: "between" }) do %> 
@@ -5,7 +11,7 @@
               <%= pb_rails("avatar", props: {
                   name: ticket[:user_name],
                   size: "xs",
-                  image_url: ticket[:user_image],
+                  image_url: is_valid_url?(ticket[:user_image]) ? ticket[:user_image] : nil,
                   margin_right: "xs",
               }) %>
           <%= pb_rails("body", props: { text: ticket[:title], truncate: "1", margin_right: "xs" }) %>
